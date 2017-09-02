@@ -31,6 +31,12 @@ class TodoController extends Controller
         ];
     }
 
+
+    public function actionPriority($id = 1)
+    {
+        $list = Todo::find()->where(['priority' => $id])->limit(10)->asArray()->all();
+        return $this->render('priority',['list' => $list]);
+    }
     /**
      * Lists all Todo models.
      * @return mixed
