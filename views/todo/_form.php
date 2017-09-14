@@ -17,7 +17,8 @@ use yii\jui\DatePicker;
 
     <?= $form->field($model, 'detail')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'priority')->textInput() ?>
+    <?= '';//$form->field($model, 'priority')->textInput() ?>
+    <?= $form->field($model, 'priority')->radioList([3=> 'Normal', 2=> 'High',1=> 'Important']) ?>
 
     <?= $form->field($model, 'status')->textInput() ?>
 
