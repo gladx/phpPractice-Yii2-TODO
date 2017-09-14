@@ -13,7 +13,16 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="todo-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?php if(isset($_GET['modelUpdated']) && $_GET['modelUpdated'])  { ?>
+            <?php
+            echo yii\bootstrap\Alert::widget([
+                'options' => [
+                    'class' => 'alert-success',
+                ],
+                'body' => 'Todo successfully updated',
+            ]);   
+            ?>         
+        <?php } ?>
     <p>
         <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
