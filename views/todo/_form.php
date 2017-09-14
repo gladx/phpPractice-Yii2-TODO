@@ -2,13 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\jui\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Todo */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="todo-form">
+<div class="todo-form col-md-6">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -20,13 +21,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'status')->textInput() ?>
 
-    <?= $form->field($model, 'create_at')->textInput() ?>
+    <?= $form->field($model, 'create_at')
+        ->widget(DatePicker::className(),['clientOptions' => ['defaultDate' => date('Y-m-d')], 'dateFormat' => 'yyyy-MM-dd']) ?>
 
-    <?= $form->field($model, 'done_at')->textInput() ?>
-
-    <?= $form->field($model, 'expired_at')->textInput() ?>
-
-    <?= $form->field($model, 'remind_at')->textInput() ?>
+    <?= $form->field($model,'done_at')
+        ->widget(DatePicker::className(),['clientOptions' => ['defaultDate' => date('Y-m-d')], 'dateFormat' => 'yyyy-MM-dd']) ?>
+    
+    <?= $form->field($model, 'expired_at')
+        ->widget(DatePicker::className(),['clientOptions' => ['defaultDate' => date('Y-m-d')], 'dateFormat' => 'yyyy-MM-dd']) ?>
+        
+    <?= $form->field($model, 'remind_at')
+        ->widget(DatePicker::className(),['clientOptions' => ['defaultDate' => date('Y-m-d')], 'dateFormat' => 'yyyy-MM-dd']) ?>
 
     <?= $form->field($model, 'color')->textInput(['maxlength' => true]) ?>
 
