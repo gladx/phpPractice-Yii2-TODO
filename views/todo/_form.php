@@ -40,7 +40,8 @@ use yii\jui\DatePicker;
             'item' => function($index, $label, $name, $checked, $value) {
 
                 $return = '<label class="modal-radio">';
-                $return .= '<input type="radio" name="' . $name . '" value="' . $value . '" tabindex="3">';
+                if($checked ) $return .= '<input checked  type="radio" name="' . $name . '"value="' . $value . '" tabindex="3">';
+                else  $return .= '<input  type="radio" name="' . $name . '"value="' . $value . '" tabindex="3">';
                 $return .= '<i ></i>';
                 $return .= '<span style="background: '. $value .'">'.  ucwords($label) . '</span>';
                 $return .= '</label>';
