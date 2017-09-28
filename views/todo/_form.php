@@ -34,7 +34,21 @@ use yii\jui\DatePicker;
     <?= $form->field($model, 'remind_at')
         ->widget(DatePicker::className(),['clientOptions' => ['defaultDate' => date('Y-m-d')], 'dateFormat' => 'yyyy-MM-dd']) ?>
 
-    <?= $form->field($model, 'color')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'color')->radioList(
+        ["white"=> "White", "#4F84C4"=> 'Marina', "#EDCDC2"=> 'Pale Dogwood',"#88B04B"=> 'Greenery', "#D8AE47"=> "Spicy Mustard", "#DFCFBE"=> "Sand Dollar","#F7786B"=> "Peach Echo"],
+        [
+            'item' => function($index, $label, $name, $checked, $value) {
+
+                $return = '<label class="modal-radio">';
+                $return .= '<input type="radio" name="' . $name . '" value="' . $value . '" tabindex="3">';
+                $return .= '<i ></i>';
+                $return .= '<span style="background: '. $value .'">'.  ucwords($label) . '</span>';
+                $return .= '</label>';
+
+                return $return;
+            }
+        ]
+    ) ?>
 
     <?= $form->field($model, 'place')->textInput(['maxlength' => true]) ?>
 

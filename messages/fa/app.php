@@ -35,7 +35,7 @@ return [
     'Search' => 'جستجو',
     'Status' => 'وضعیت',
     'Title' => 'عنوان',
-    'Todos' => 'وضایف',
+    'Todos' => 'وظایف',
     'Update' => 'آپدیت',
     'Update {modelClass}: ' => 'آپدیت {modelClass} : ',
 ];
