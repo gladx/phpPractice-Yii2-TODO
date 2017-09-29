@@ -21,3 +21,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'itemView' => '_view'
         ]) ?>
 </div>
+
+<script>
+    function optionShow(element){
+        element.nextElementSibling.style.display= "unset";
+        //document.getElementById('option').innerHtml = "a";
+        console.log(element);
+    }
+</script>

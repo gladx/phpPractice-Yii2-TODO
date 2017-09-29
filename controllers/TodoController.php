@@ -103,7 +103,8 @@ class TodoController extends Controller
         $modelUpdated = false;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $modelUpdated = true;
-            return $this->redirect(['view', 'id' => $model->id, 'modelUpdated' => $modelUpdated]);
+            //return $this->redirect(['view', 'id' => $model->id, 'modelUpdated' => $modelUpdated]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
