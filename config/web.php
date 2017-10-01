@@ -57,6 +57,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '<controller>/<action>' =>  '<controller>/<action>',
+                '<controller>/view/<id:[\d]>' => '<controller>/view',
                 [
                     'class' => 'yii\rest\UrlRule',
                      'controller' => ['u' => 'api'],
